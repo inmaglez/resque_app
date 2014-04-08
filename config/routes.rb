@@ -1,7 +1,12 @@
+require 'resque_web'
 ResqueApp::Application.routes.draw do
 
+
   root "background_job#index" # this line instead of get ...
-    mount ResqueWeb::Engine => "/resque_web" # this line added
+
+ # ResqueWeb::Engine.eager load!
+
+  mount ResqueWeb::Engine => "/resque_web" # this line added
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
